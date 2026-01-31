@@ -1,1 +1,1 @@
-print("welcome to hospital system!")
+print("welcome to hospital system!!")
