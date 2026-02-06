@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "5fba",
+      "firstName": "Vas",
+      "lastName": "",
+      "email": "vas@gmail.com",
+      "department": "IT",
+      "gender": "Female",
+      "hobbies": [
+        "Reading",
+        "Coding"
+      ]
+    }
+  ]
+}

@@ -62,14 +62,41 @@ const Registration = () => {
         return newErrors;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         const validateErrors = validate();
         setErrors(validateErrors);
 
         if (Object.keys(validateErrors).length === 0) {
-            console.log("Registration Successful:", form);
-            alert("Employee Registered Successfully!");
+            const nameParts = form.username.trim().split(" ");
+
+            const newUser = {
+                firstName: nameParts[0],
+                lastName: nameParts.length > 1 ? nameParts.slice(1).join(" ") : "",
+                email: form.email,
+                department: form.department,
+                gender: form.gender,
+                hobbies: form.hobbies
+            };
+
+            try {
+                const response = await fetch("http://localhost:3001/users", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newUser)
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to register employee.");
+                }
+
+                console.log("Registration Successful:", newUser);
+                alert("Employee Registered Successfully!");
+            } catch (error) {
+                console.error("Error registering employee:", error);
+            }
         }
     };
 
