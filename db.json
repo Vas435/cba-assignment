@@ -3,7 +3,7 @@
     {
       "id": "5fba",
       "firstName": "Vas",
-      "lastName": "",
+      "lastName": "b",
       "email": "vas@gmail.com",
       "department": "IT",
       "gender": "Female",
@@ -11,6 +11,16 @@
         "Reading",
         "Coding"
       ]
+    },
+    {
+      "id": "4f78",
+      "firstName": "vasuda",
+      "lastName": "",
+      "email": "V@gmail.com",
+      "password": "1234567",
+      "department": "IT",
+      "gender": "Male",
+      "hobbies": []
     }
   ]
 }
